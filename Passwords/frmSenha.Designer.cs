@@ -29,6 +29,7 @@ namespace Passwords
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSenha));
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.checkLetras = new System.Windows.Forms.CheckBox();
             this.checkNum = new System.Windows.Forms.CheckBox();
@@ -104,9 +105,10 @@ namespace Passwords
             this.Controls.Add(this.checkNum);
             this.Controls.Add(this.checkLetras);
             this.Controls.Add(this.txtSenha);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Senhas";
             this.ResumeLayout(false);
             this.PerformLayout();
 
