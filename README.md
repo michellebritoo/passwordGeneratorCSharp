@@ -7,3 +7,11 @@
 ---
 ## :rocket: Tech skills used in the project
 ### :white_check_mark: C#
+---
+
+### Project task list
+
+- [ ] Publicize the project on social media
+- [ ] Demonstrate project features
+- [ ] Impact on the lives of at least ten people
+- [ ] Collect testimonials and possible improvements
