@@ -15,27 +15,36 @@ namespace Passwords
     {
         #region Propriedades 
         string caracteres = "";
-        string alfabeto = "abcdefghijklmnopqrstuvwxyz";
+        string letras = "abcdefghijklmnopqrstuvwxyz";
+        string letrasM = "";
         string num = "0123456789";
         string simbolos = "#/%$!/=-_()";
         StringBuilder senha = new StringBuilder();
         #endregion
 
+        private void frmSenha_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        #region border radius
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // height of ellipse
-            int nHeightEllipse // width of ellipse
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
         );
+        #endregion
 
         public frmSenha()
         {
             InitializeComponent();
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            letrasM = letras.ToUpper();
         }
 
         private void btnGerar_Click(object sender, EventArgs e)
@@ -47,11 +56,13 @@ namespace Passwords
                 LimparSenha(senha);
                 LimparCampo(txtSenha);
                 if (checkLetras.Checked)
-                    caracteres += alfabeto;
+                    caracteres += letras;
                 if (checkNum.Checked)
                     caracteres += num;
                 if (checkCaracteres.Checked)
                     caracteres += simbolos;
+                if (checkLetM.Checked)
+                    caracteres += letrasM;
 
                 Random rnd = new Random();
 
@@ -80,6 +91,22 @@ namespace Passwords
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        private void pnlBtnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pnlBtnFechar_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlBtnFechar_Leave(object sender, EventArgs e)
+        {
+
         }
     }
 }
