@@ -20,11 +20,15 @@ namespace Passwords
         string num = "0123456789";
         string simbolos = "#/%$!/=-_()";
         StringBuilder senha = new StringBuilder();
+        public List<string> PasswordList { get; set; }
+        
+    
+        //public List<string> PasswordList = new List<string>();
         #endregion
 
         private void frmSenha_Load(object sender, EventArgs e)
         {
-
+            PasswordList = new List<string>();
         }
 
         #region border radius
@@ -44,7 +48,7 @@ namespace Passwords
         {
             InitializeComponent();
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            letrasM = letras.ToUpper();
+            letrasM = letras.ToUpper();            
         }
 
         private void btnGerar_Click(object sender, EventArgs e)
@@ -52,7 +56,11 @@ namespace Passwords
             try
             {
                 if (!checkCaracteres.Checked && !checkLetras.Checked && !checkNum.Checked)
+                {
                     MessageBox.Show("Selecione ao menos um tipo de caractere");
+                    return;
+                }
+                   
                 LimparSenha(senha);
                 LimparCampo(txtSenha);
                 if (checkLetras.Checked)
@@ -108,5 +116,19 @@ namespace Passwords
         {
 
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            var senha = txtSenha.Text;
+            PasswordList.Add(senha);
+        }
+
+        private void btnGerenciar_Click(object sender, EventArgs e)
+        {
+            frmGerenciadorSenhas Tela = new frmGerenciadorSenhas(PasswordList);
+            //Tela.MdiParent = frmSenha;
+            Tela.ShowDialog(this);
+        }
+
     }
 }

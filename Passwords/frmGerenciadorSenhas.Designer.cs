@@ -36,15 +36,28 @@ namespace Passwords
             this.btnClose = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.GpSenhas = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Grid = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.referencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
             pnlBtnFechar = new System.Windows.Forms.Panel();
             this.pnlBackgroud.SuspendLayout();
             this.GpSenhas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pnlBtnFechar
+            // 
+            pnlBtnFechar.AllowDrop = true;
+            pnlBtnFechar.BackColor = System.Drawing.Color.Black;
+            pnlBtnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlBtnFechar.BackgroundImage")));
+            pnlBtnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            pnlBtnFechar.Location = new System.Drawing.Point(595, 5);
+            pnlBtnFechar.Name = "pnlBtnFechar";
+            pnlBtnFechar.Size = new System.Drawing.Size(25, 25);
+            pnlBtnFechar.TabIndex = 12;
+            pnlBtnFechar.Tag = "Fechar";
+            pnlBtnFechar.Click += new System.EventHandler(this.pnlBtnFechar_Click);
             // 
             // pnlBackgroud
             // 
@@ -78,18 +91,6 @@ namespace Passwords
             this.btnClose.Size = new System.Drawing.Size(183, 25);
             this.btnClose.TabIndex = 10;
             // 
-            // pnlBtnFechar
-            // 
-            pnlBtnFechar.AllowDrop = true;
-            pnlBtnFechar.BackColor = System.Drawing.Color.Black;
-            pnlBtnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlBtnFechar.BackgroundImage")));
-            pnlBtnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pnlBtnFechar.Location = new System.Drawing.Point(595, 5);
-            pnlBtnFechar.Name = "pnlBtnFechar";
-            pnlBtnFechar.Size = new System.Drawing.Size(25, 25);
-            pnlBtnFechar.TabIndex = 12;
-            pnlBtnFechar.Tag = "Fechar";
-            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -102,38 +103,25 @@ namespace Passwords
             // 
             // GpSenhas
             // 
-            this.GpSenhas.Controls.Add(this.dataGridView1);
+            this.GpSenhas.Controls.Add(this.Grid);
             this.GpSenhas.Location = new System.Drawing.Point(23, 75);
             this.GpSenhas.Name = "GpSenhas";
-            this.GpSenhas.Size = new System.Drawing.Size(596, 354);
+            this.GpSenhas.Size = new System.Drawing.Size(590, 354);
             this.GpSenhas.TabIndex = 14;
             this.GpSenhas.TabStop = false;
             this.GpSenhas.Text = "Senhas Cadastradas";
             // 
-            // dataGridView1
+            // Grid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.referencia,
             this.senha});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(590, 335);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // referencia
-            // 
-            this.referencia.HeaderText = "Referência";
-            this.referencia.Name = "referencia";
-            this.referencia.Width = 200;
-            // 
-            // senha
-            // 
-            this.senha.HeaderText = "Senha";
-            this.senha.Name = "senha";
-            this.senha.ReadOnly = true;
-            this.senha.Width = 200;
+            this.Grid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Grid.Location = new System.Drawing.Point(3, 16);
+            this.Grid.Name = "Grid";
+            this.Grid.Size = new System.Drawing.Size(584, 335);
+            this.Grid.TabIndex = 0;
             // 
             // panel1
             // 
@@ -144,6 +132,19 @@ namespace Passwords
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(34, 26);
             this.panel1.TabIndex = 1;
+            // 
+            // referencia
+            // 
+            this.referencia.HeaderText = "Referência";
+            this.referencia.Name = "referencia";
+            this.referencia.Width = 265;
+            // 
+            // senha
+            // 
+            this.senha.HeaderText = "Senha";
+            this.senha.Name = "senha";
+            this.senha.ReadOnly = true;
+            this.senha.Width = 275;
             // 
             // frmGerenciadorSenhas
             // 
@@ -158,10 +159,11 @@ namespace Passwords
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGerenciadorSenhas";
             this.Text = "Gerenciador de senhas";
+            this.Load += new System.EventHandler(this.frmGerenciadorSenhas_Load);
             this.pnlBackgroud.ResumeLayout(false);
             this.pnlBackgroud.PerformLayout();
             this.GpSenhas.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,9 +176,9 @@ namespace Passwords
         private System.Windows.Forms.Panel btnClose;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.GroupBox GpSenhas;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Grid;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn referencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn senha;
-        private System.Windows.Forms.Panel panel1;
     }
 }
