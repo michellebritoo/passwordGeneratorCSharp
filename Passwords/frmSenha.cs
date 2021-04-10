@@ -22,7 +22,7 @@ namespace Passwords
         string simbolos = "#/%$!/=-_()";
         StringBuilder senha = new StringBuilder();
         public List<string> PasswordList { get; set; }
-        string sourcePath= @"c:\temp\file1.txt";
+        string sourcePath = @"c:\temp\file1.txt";
         #endregion
 
         private void frmSenha_Load(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace Passwords
         public frmSenha()
         {
             InitializeComponent();
-            letrasM = letras.ToUpper();            
+            letrasM = letras.ToUpper();
         }
 
         private void btnGerar_Click(object sender, EventArgs e)
@@ -45,9 +45,11 @@ namespace Passwords
                     MessageBox.Show("Selecione ao menos um tipo de caractere");
                     return;
                 }
-                   
+
                 LimparSenha(senha);
                 LimparCampo(txtSenha);
+                caracteres = "";
+
                 if (checkLetras.Checked)
                     caracteres += letras;
                 if (checkNum.Checked)
@@ -81,33 +83,12 @@ namespace Passwords
             txt.Text = "";
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
-        private void pnlBtnFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void pnlBtnFechar_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlBtnFechar_Leave(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             var senha = txtSenha.Text;
             PasswordList.Add(senha);
             StreamReader sr;
-            
+
 
         }
 
