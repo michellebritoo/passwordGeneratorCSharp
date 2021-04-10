@@ -29,82 +29,22 @@ namespace Passwords
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Panel pnlBtnFechar;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciadorSenhas));
-            this.pnlBackgroud = new System.Windows.Forms.Panel();
-            this.lblTitleForm = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.GpSenhas = new System.Windows.Forms.GroupBox();
             this.Grid = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.referencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            pnlBtnFechar = new System.Windows.Forms.Panel();
-            this.pnlBackgroud.SuspendLayout();
+            this.btnOlhoLivre = new System.Windows.Forms.Panel();
+            this.btnOlho = new System.Windows.Forms.Panel();
+            this.cbxVisualizarSenhas = new System.Windows.Forms.CheckBox();
             this.GpSenhas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlBtnFechar
-            // 
-            pnlBtnFechar.AllowDrop = true;
-            pnlBtnFechar.BackColor = System.Drawing.Color.Black;
-            pnlBtnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlBtnFechar.BackgroundImage")));
-            pnlBtnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pnlBtnFechar.Location = new System.Drawing.Point(595, 5);
-            pnlBtnFechar.Name = "pnlBtnFechar";
-            pnlBtnFechar.Size = new System.Drawing.Size(25, 25);
-            pnlBtnFechar.TabIndex = 12;
-            pnlBtnFechar.Tag = "Fechar";
-            pnlBtnFechar.Click += new System.EventHandler(this.pnlBtnFechar_Click);
-            // 
-            // pnlBackgroud
-            // 
-            this.pnlBackgroud.BackColor = System.Drawing.Color.Black;
-            this.pnlBackgroud.Controls.Add(this.lblTitleForm);
-            this.pnlBackgroud.Controls.Add(this.btnClose);
-            this.pnlBackgroud.Controls.Add(pnlBtnFechar);
-            this.pnlBackgroud.Location = new System.Drawing.Point(-1, -1);
-            this.pnlBackgroud.Name = "pnlBackgroud";
-            this.pnlBackgroud.Size = new System.Drawing.Size(640, 33);
-            this.pnlBackgroud.TabIndex = 12;
-            // 
-            // lblTitleForm
-            // 
-            this.lblTitleForm.AutoSize = true;
-            this.lblTitleForm.ForeColor = System.Drawing.Color.White;
-            this.lblTitleForm.Location = new System.Drawing.Point(21, 10);
-            this.lblTitleForm.Name = "lblTitleForm";
-            this.lblTitleForm.Size = new System.Drawing.Size(151, 13);
-            this.lblTitleForm.TabIndex = 0;
-            this.lblTitleForm.Text = "GERENCIADOR DE SENHAS";
-            // 
-            // btnClose
-            // 
-            this.btnClose.AccessibleDescription = "Fechar";
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.Location = new System.Drawing.Point(457, 32);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(183, 25);
-            this.btnClose.TabIndex = 10;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lblTitle.Location = new System.Drawing.Point(475, 50);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(103, 15);
-            this.lblTitle.TabIndex = 13;
-            this.lblTitle.Text = "Visualizar senhas";
-            // 
             // GpSenhas
             // 
             this.GpSenhas.Controls.Add(this.Grid);
-            this.GpSenhas.Location = new System.Drawing.Point(23, 75);
+            this.GpSenhas.Location = new System.Drawing.Point(25, 49);
             this.GpSenhas.Name = "GpSenhas";
             this.GpSenhas.Size = new System.Drawing.Size(590, 354);
             this.GpSenhas.TabIndex = 14;
@@ -123,16 +63,6 @@ namespace Passwords
             this.Grid.Size = new System.Drawing.Size(584, 335);
             this.Grid.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.panel1.Location = new System.Drawing.Point(579, 43);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(34, 26);
-            this.panel1.TabIndex = 1;
-            // 
             // referencia
             // 
             this.referencia.HeaderText = "Referência";
@@ -146,22 +76,55 @@ namespace Passwords
             this.senha.ReadOnly = true;
             this.senha.Width = 275;
             // 
+            // btnOlhoLivre
+            // 
+            this.btnOlhoLivre.BackColor = System.Drawing.Color.Transparent;
+            this.btnOlhoLivre.BackgroundImage = global::Passwords.Properties.Resources.olhoLivre;
+            this.btnOlhoLivre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnOlhoLivre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnOlhoLivre.Location = new System.Drawing.Point(12, 12);
+            this.btnOlhoLivre.Name = "btnOlhoLivre";
+            this.btnOlhoLivre.Size = new System.Drawing.Size(34, 26);
+            this.btnOlhoLivre.TabIndex = 2;
+            // 
+            // btnOlho
+            // 
+            this.btnOlho.BackColor = System.Drawing.Color.Transparent;
+            this.btnOlho.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOlho.BackgroundImage")));
+            this.btnOlho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnOlho.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnOlho.Location = new System.Drawing.Point(578, 17);
+            this.btnOlho.Name = "btnOlho";
+            this.btnOlho.Size = new System.Drawing.Size(34, 26);
+            this.btnOlho.TabIndex = 1;
+            // 
+            // cbxVisualizarSenhas
+            // 
+            this.cbxVisualizarSenhas.AutoSize = true;
+            this.cbxVisualizarSenhas.Location = new System.Drawing.Point(463, 26);
+            this.cbxVisualizarSenhas.Name = "cbxVisualizarSenhas";
+            this.cbxVisualizarSenhas.Size = new System.Drawing.Size(109, 17);
+            this.cbxVisualizarSenhas.TabIndex = 15;
+            this.cbxVisualizarSenhas.Text = "Visualizar Senhas";
+            this.cbxVisualizarSenhas.UseVisualStyleBackColor = true;
+            this.cbxVisualizarSenhas.CheckedChanged += new System.EventHandler(this.cbxVisualizarSenhas_CheckedChanged);
+            // 
             // frmGerenciadorSenhas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 450);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(638, 432);
+            this.Controls.Add(this.cbxVisualizarSenhas);
+            this.Controls.Add(this.btnOlhoLivre);
+            this.Controls.Add(this.btnOlho);
             this.Controls.Add(this.GpSenhas);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.pnlBackgroud);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmGerenciadorSenhas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciador de senhas";
             this.Load += new System.EventHandler(this.frmGerenciadorSenhas_Load);
-            this.pnlBackgroud.ResumeLayout(false);
-            this.pnlBackgroud.PerformLayout();
             this.GpSenhas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.ResumeLayout(false);
@@ -170,15 +133,12 @@ namespace Passwords
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlBackgroud;
-        private System.Windows.Forms.Label lblTitleForm;
-        private System.Windows.Forms.Panel btnClose;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.GroupBox GpSenhas;
         private System.Windows.Forms.DataGridView Grid;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel btnOlho;
         private System.Windows.Forms.DataGridViewTextBoxColumn referencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn senha;
+        private System.Windows.Forms.Panel btnOlhoLivre;
+        private System.Windows.Forms.CheckBox cbxVisualizarSenhas;
     }
 }

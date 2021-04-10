@@ -29,7 +29,6 @@ namespace Passwords
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Panel pnlBtnFechar;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSenha));
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.checkLetras = new System.Windows.Forms.CheckBox();
@@ -39,32 +38,14 @@ namespace Passwords
             this.btnGerar = new System.Windows.Forms.Button();
             this.G1 = new System.Windows.Forms.GroupBox();
             this.checkLetM = new System.Windows.Forms.CheckBox();
-            this.pnlBackgroud = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Panel();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnGerenciar = new System.Windows.Forms.Button();
-            pnlBtnFechar = new System.Windows.Forms.Panel();
             this.G1.SuspendLayout();
-            this.pnlBackgroud.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlBtnFechar
-            // 
-            pnlBtnFechar.AllowDrop = true;
-            pnlBtnFechar.BackColor = System.Drawing.Color.Black;
-            pnlBtnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlBtnFechar.BackgroundImage")));
-            pnlBtnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            pnlBtnFechar.Location = new System.Drawing.Point(495, 4);
-            pnlBtnFechar.Name = "pnlBtnFechar";
-            pnlBtnFechar.Size = new System.Drawing.Size(25, 25);
-            pnlBtnFechar.TabIndex = 12;
-            pnlBtnFechar.Tag = "Fechar";
-            pnlBtnFechar.Click += new System.EventHandler(this.pnlBtnFechar_Click);
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(117, 182);
+            this.txtSenha.Location = new System.Drawing.Point(106, 131);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(274, 20);
             this.txtSenha.TabIndex = 0;
@@ -102,7 +83,7 @@ namespace Passwords
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(27, 186);
+            this.lblSenha.Location = new System.Drawing.Point(16, 135);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(84, 13);
             this.lblSenha.TabIndex = 7;
@@ -110,7 +91,7 @@ namespace Passwords
             // 
             // btnGerar
             // 
-            this.btnGerar.Location = new System.Drawing.Point(427, 133);
+            this.btnGerar.Location = new System.Drawing.Point(416, 82);
             this.btnGerar.Name = "btnGerar";
             this.btnGerar.Size = new System.Drawing.Size(94, 29);
             this.btnGerar.TabIndex = 8;
@@ -124,7 +105,7 @@ namespace Passwords
             this.G1.Controls.Add(this.checkCaracteres);
             this.G1.Controls.Add(this.checkLetras);
             this.G1.Controls.Add(this.checkNum);
-            this.G1.Location = new System.Drawing.Point(23, 73);
+            this.G1.Location = new System.Drawing.Point(12, 22);
             this.G1.Name = "G1";
             this.G1.Size = new System.Drawing.Size(498, 54);
             this.G1.TabIndex = 9;
@@ -141,42 +122,9 @@ namespace Passwords
             this.checkLetM.Text = "Letras Maiusculas";
             this.checkLetM.UseVisualStyleBackColor = true;
             // 
-            // pnlBackgroud
-            // 
-            this.pnlBackgroud.BackColor = System.Drawing.Color.Black;
-            this.pnlBackgroud.Controls.Add(this.label1);
-            this.pnlBackgroud.Controls.Add(this.btnClose);
-            this.pnlBackgroud.Controls.Add(pnlBtnFechar);
-            this.pnlBackgroud.Location = new System.Drawing.Point(-1, -1);
-            this.pnlBackgroud.Name = "pnlBackgroud";
-            this.pnlBackgroud.Size = new System.Drawing.Size(634, 33);
-            this.pnlBackgroud.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "GERENCIADOR DE SENHAS";
-            // 
-            // btnClose
-            // 
-            this.btnClose.AccessibleDescription = "Fechar";
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.Location = new System.Drawing.Point(457, 32);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(177, 25);
-            this.btnClose.TabIndex = 10;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(427, 176);
+            this.btnSalvar.Location = new System.Drawing.Point(416, 125);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(94, 29);
             this.btnSalvar.TabIndex = 12;
@@ -186,7 +134,7 @@ namespace Passwords
             // 
             // btnGerenciar
             // 
-            this.btnGerenciar.Location = new System.Drawing.Point(427, 225);
+            this.btnGerenciar.Location = new System.Drawing.Point(416, 174);
             this.btnGerenciar.Name = "btnGerenciar";
             this.btnGerenciar.Size = new System.Drawing.Size(94, 29);
             this.btnGerenciar.TabIndex = 13;
@@ -199,24 +147,22 @@ namespace Passwords
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(538, 266);
+            this.ClientSize = new System.Drawing.Size(526, 230);
             this.Controls.Add(this.btnGerenciar);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.pnlBackgroud);
             this.Controls.Add(this.btnGerar);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.G1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Senhas";
+            this.Text = "Gerenciador de senhas";
             this.Load += new System.EventHandler(this.frmSenha_Load);
             this.G1.ResumeLayout(false);
             this.G1.PerformLayout();
-            this.pnlBackgroud.ResumeLayout(false);
-            this.pnlBackgroud.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,10 +177,7 @@ namespace Passwords
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Button btnGerar;
         private System.Windows.Forms.GroupBox G1;
-        private System.Windows.Forms.Panel btnClose;
-        private System.Windows.Forms.Panel pnlBackgroud;
         private System.Windows.Forms.CheckBox checkLetM;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnGerenciar;
     }

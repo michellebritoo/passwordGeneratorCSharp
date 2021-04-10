@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.IO;
 
 namespace Passwords
 {
@@ -21,9 +22,7 @@ namespace Passwords
         string simbolos = "#/%$!/=-_()";
         StringBuilder senha = new StringBuilder();
         public List<string> PasswordList { get; set; }
-        
-    
-        //public List<string> PasswordList = new List<string>();
+        string sourcePath= @"c:\temp\file1.txt";
         #endregion
 
         private void frmSenha_Load(object sender, EventArgs e)
@@ -31,23 +30,9 @@ namespace Passwords
             PasswordList = new List<string>();
         }
 
-        #region border radius
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-        );
-        #endregion
-
         public frmSenha()
         {
             InitializeComponent();
-            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             letrasM = letras.ToUpper();            
         }
 
@@ -121,6 +106,9 @@ namespace Passwords
         {
             var senha = txtSenha.Text;
             PasswordList.Add(senha);
+            StreamReader sr;
+            
+
         }
 
         private void btnGerenciar_Click(object sender, EventArgs e)
