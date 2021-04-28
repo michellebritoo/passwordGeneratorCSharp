@@ -22,7 +22,6 @@ namespace Passwords
         string simbolos = "#/%$!/=-_()";
         StringBuilder senha = new StringBuilder();
         public List<string> PasswordList { get; set; }
-        string sourcePath = @"c:\temp\file1.txt";
         #endregion
 
         private void frmSenha_Load(object sender, EventArgs e)
@@ -87,7 +86,6 @@ namespace Passwords
         private void btnGerenciar_Click(object sender, EventArgs e)
         {
             frmGerenciadorSenhas Tela = new frmGerenciadorSenhas(PasswordList);
-            //Tela.MdiParent = frmSenha;
             Tela.ShowDialog(this);
         }
         #endregion

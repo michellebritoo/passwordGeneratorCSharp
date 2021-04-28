@@ -134,7 +134,7 @@ namespace Passwords
             // 
             // btnGerenciar
             // 
-            this.btnGerenciar.Location = new System.Drawing.Point(416, 174);
+            this.btnGerenciar.Location = new System.Drawing.Point(416, 169);
             this.btnGerenciar.Name = "btnGerenciar";
             this.btnGerenciar.Size = new System.Drawing.Size(94, 29);
             this.btnGerenciar.TabIndex = 13;

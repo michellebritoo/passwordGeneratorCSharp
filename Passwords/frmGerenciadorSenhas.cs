@@ -8,52 +8,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
+using System.IO;
 
 namespace Passwords
 {
     public partial class frmGerenciadorSenhas : Form
     {
-        frmSenha T;
+        frmSenha T = new frmSenha();
         List<string> senhasListadas;
+        string sourcePath = @"c:\temp\file1.txt";
 
         public frmGerenciadorSenhas()
         {
             InitializeComponent();
-            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            Grid.AutoGenerateColumns = false;
         }
 
         public frmGerenciadorSenhas(List<string> senhas)
         {
             InitializeComponent();
-            Grid.AutoGenerateColumns = false;
             senhasListadas = senhas;
-        }
-
-        private void pnlBtnFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void frmGerenciadorSenhas_Load(object sender, EventArgs e)
         {
             btnOlhoLivre.Visible = false;
-
+            Grid.AutoGenerateColumns = false;
         }
-
-        #region border radius
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-        );
-        #endregion
 
         private void cbxVisualizarSenhas_CheckedChanged(object sender, EventArgs e)
         {
@@ -65,10 +45,11 @@ namespace Passwords
 
                 Grid.Rows.Clear();
                 Grid.Refresh();
-                foreach (var item in senhasListadas)
+
+                foreach (var senha in senhasListadas)
                 {
                     int i = 0;
-                    Grid.Rows.Insert(i, "Editar referência", item);
+                    Grid.Rows.Insert(i, "Editar referência", senha);
                     i++;
                 }
             }
@@ -81,5 +62,33 @@ namespace Passwords
 
             }
         }
+
+        private void BtnExportar_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(sourcePath))
+            {
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(sourcePath))
+                    {
+                        sw.WriteLine("");
+                        sw.WriteLine("---GERENCIADOR DE SENHAS---");
+                        sw.WriteLine("Senhas armazenadas em: " + DateTime.Now);
+
+                        foreach (var senha in senhasListadas)
+                        {
+                            sw.WriteLine(senha);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Um erro ocorreu.\nDetalhes: " + ex.Message);
+                }
+            }
+
+        }
+
     }
 }
+

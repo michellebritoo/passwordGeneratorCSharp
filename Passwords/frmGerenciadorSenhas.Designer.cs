@@ -37,6 +37,7 @@ namespace Passwords
             this.btnOlhoLivre = new System.Windows.Forms.Panel();
             this.btnOlho = new System.Windows.Forms.Panel();
             this.cbxVisualizarSenhas = new System.Windows.Forms.CheckBox();
+            this.BtnExportar = new System.Windows.Forms.Button();
             this.GpSenhas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +47,7 @@ namespace Passwords
             this.GpSenhas.Controls.Add(this.Grid);
             this.GpSenhas.Location = new System.Drawing.Point(25, 49);
             this.GpSenhas.Name = "GpSenhas";
-            this.GpSenhas.Size = new System.Drawing.Size(590, 354);
+            this.GpSenhas.Size = new System.Drawing.Size(590, 329);
             this.GpSenhas.TabIndex = 14;
             this.GpSenhas.TabStop = false;
             this.GpSenhas.Text = "Senhas Cadastradas";
@@ -60,7 +61,7 @@ namespace Passwords
             this.Grid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Grid.Location = new System.Drawing.Point(3, 16);
             this.Grid.Name = "Grid";
-            this.Grid.Size = new System.Drawing.Size(584, 335);
+            this.Grid.Size = new System.Drawing.Size(584, 310);
             this.Grid.TabIndex = 0;
             // 
             // referencia
@@ -109,12 +110,23 @@ namespace Passwords
             this.cbxVisualizarSenhas.UseVisualStyleBackColor = true;
             this.cbxVisualizarSenhas.CheckedChanged += new System.EventHandler(this.cbxVisualizarSenhas_CheckedChanged);
             // 
+            // BtnExportar
+            // 
+            this.BtnExportar.Location = new System.Drawing.Point(537, 397);
+            this.BtnExportar.Name = "BtnExportar";
+            this.BtnExportar.Size = new System.Drawing.Size(75, 23);
+            this.BtnExportar.TabIndex = 16;
+            this.BtnExportar.Text = "Exportar";
+            this.BtnExportar.UseVisualStyleBackColor = true;
+            this.BtnExportar.Click += new System.EventHandler(this.BtnExportar_Click);
+            // 
             // frmGerenciadorSenhas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(638, 432);
+            this.Controls.Add(this.BtnExportar);
             this.Controls.Add(this.cbxVisualizarSenhas);
             this.Controls.Add(this.btnOlhoLivre);
             this.Controls.Add(this.btnOlho);
@@ -140,5 +152,6 @@ namespace Passwords
         private System.Windows.Forms.DataGridViewTextBoxColumn senha;
         private System.Windows.Forms.Panel btnOlhoLivre;
         private System.Windows.Forms.CheckBox cbxVisualizarSenhas;
+        private System.Windows.Forms.Button BtnExportar;
     }
 }
