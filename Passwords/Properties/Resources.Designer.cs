@@ -83,6 +83,16 @@ namespace Passwords.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btndownload {
+            get {
+                object obj = ResourceManager.GetObject("btndownload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnGerar {
             get {
                 object obj = ResourceManager.GetObject("btnGerar", resourceCulture);

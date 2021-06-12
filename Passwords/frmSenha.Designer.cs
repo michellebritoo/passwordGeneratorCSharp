@@ -41,12 +41,12 @@ namespace Passwords
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnGerenciar = new System.Windows.Forms.Button();
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelSalvar = new System.Windows.Forms.Panel();
             this.panelMinimize = new System.Windows.Forms.Panel();
             this.panelFechar = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.G1.SuspendLayout();
             this.panelTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -182,6 +182,18 @@ namespace Passwords
             this.panelTitulo.TabIndex = 14;
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblTitulo.Location = new System.Drawing.Point(11, 8);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(181, 21);
+            this.lblTitulo.TabIndex = 18;
+            this.lblTitulo.Text = "GERADOR DE SENHAS";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
@@ -219,7 +231,7 @@ namespace Passwords
             this.panelMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMinimize.BackgroundImage = global::Passwords.Properties.Resources.btnMinimizar;
             this.panelMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelMinimize.Location = new System.Drawing.Point(471, 3);
+            this.panelMinimize.Location = new System.Drawing.Point(479, 5);
             this.panelMinimize.Name = "panelMinimize";
             this.panelMinimize.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panelMinimize.Size = new System.Drawing.Size(25, 25);
@@ -231,24 +243,12 @@ namespace Passwords
             this.panelFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFechar.BackgroundImage = global::Passwords.Properties.Resources.btncancel;
             this.panelFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelFechar.Location = new System.Drawing.Point(512, 3);
+            this.panelFechar.Location = new System.Drawing.Point(515, 5);
             this.panelFechar.Name = "panelFechar";
             this.panelFechar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panelFechar.Size = new System.Drawing.Size(25, 25);
             this.panelFechar.TabIndex = 15;
             this.panelFechar.Click += new System.EventHandler(this.panelFechar_Click);
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblTitulo.Location = new System.Drawing.Point(11, 8);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(181, 21);
-            this.lblTitulo.TabIndex = 18;
-            this.lblTitulo.Text = "GERADOR DE SENHAS";
             // 
             // frmSenha
             // 
