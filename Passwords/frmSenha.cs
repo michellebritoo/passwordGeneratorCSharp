@@ -15,13 +15,16 @@ namespace Passwords
     public partial class frmSenha : Form
     {
         #region Propriedades 
+        public List<string> PasswordList { get; set; }
+
         public string caracteres = "";
         string letras = "abcdefghijklmnopqrstuvwxyz";
         string letrasM;
         string num = "0123456789";
         string simbolos = "#/%$!/=-_()";
         StringBuilder senha = new StringBuilder();
-        public List<string> PasswordList { get; set; }
+
+        SenhaController controller = new SenhaController();
         #endregion
 
         private void frmSenha_Load(object sender, EventArgs e)
@@ -91,6 +94,9 @@ namespace Passwords
         {
             var senha = txtSenha.Text;
             PasswordList.Add(senha);
+
+            controller.Cadastrar(txtSenha.Text, txtRef.Text);
+
         }
 
         private void btnGerenciar_Click(object sender, EventArgs e)
@@ -151,8 +157,7 @@ namespace Passwords
         {
             return caracteres = "";
         }
+
         #endregion
-
-
     }
 }
