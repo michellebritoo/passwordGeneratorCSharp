@@ -17,6 +17,7 @@ namespace Passwords
         frmSenha T = new frmSenha();
         List<string> senhasListadas;
         string sourcePath = @"c:\temp\file1.txt";
+        int statusForm = 0; //0= normal - 1=maximo
 
         public frmGerenciadorSenhas()
         {
@@ -47,7 +48,7 @@ namespace Passwords
             if (cbxVisualizarSenhas.Checked)
             {
                 btnOlho.Visible = false;
-                btnOlhoLivre.Location = new Point(579, 75);
+                btnOlhoLivre.Location = btnOlho.Location;
                 btnOlhoLivre.Visible = true;
 
                 Grid.Rows.Clear();
@@ -112,6 +113,51 @@ namespace Passwords
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void panelMaximizar_Click(object sender, EventArgs e)
+        {
+            if (statusForm == 0)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                statusForm = 1;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                statusForm = 0;
+            }
+
+        }
+
+        private void panelMaxFrente_Click(object sender, EventArgs e)
+        {
+            if (statusForm == 0)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                statusForm = 1;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                statusForm = 0;
+            }
+        }
+
+        private void panelMaxTras_Click(object sender, EventArgs e)
+        {
+            if (statusForm == 0)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                statusForm = 1;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                statusForm = 0;
+            }
+
+        }
     }
 }
+
 
