@@ -30,9 +30,19 @@ namespace Passwords
             letrasM = letras.ToUpper();
         }
 
+        #region movimento página
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int xMsg, int wParam, int lParam);
+        #endregion
+
         public frmSenha()
         {
             InitializeComponent();
+            btnSalvar.TextAlign = ContentAlignment.MiddleLeft;
+            btnGerar.TextAlign = ContentAlignment.MiddleLeft;
+            btnGerenciar.TextAlign = ContentAlignment.MiddleLeft;
         }
 
         #region eventos da form
@@ -88,6 +98,22 @@ namespace Passwords
             frmGerenciadorSenhas Tela = new frmGerenciadorSenhas(PasswordList);
             Tela.ShowDialog(this);
         }
+        private void panelFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void panelTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panelMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
         #endregion
 
         #region métodos privados
@@ -126,6 +152,7 @@ namespace Passwords
             return caracteres = "";
         }
         #endregion
+
 
     }
 }
